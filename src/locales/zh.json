@@ -1,3 +1,43 @@
 {
-  "text": "你好世界"
+  "menu": {
+    "index": "主页",
+    "posts": "文章",
+    "messages": "留言",
+    "friends": "友邻"
+  },
+  "button": {
+    "login": "登录",
+    "register": "注册",
+    "send": "发送"
+  },
+  "form": {
+    "email": {
+      "label": "邮箱",
+      "place": "输入你的电子邮箱"
+    },
+    "password": {
+      "label": "密码",
+      "place": "输入8-16位的密码"
+    },
+    "surePassword": {
+      "label": "确认密码",
+      "place": "再次输入密码"
+    },
+    "code": {
+      "label": "验证码",
+      "place": "输入邮箱中的验证码"
+    },
+    "nickname": {
+      "label": "昵称",
+      "place": "输入你的显示昵称"
+    }
+  },
+  "login": {
+    "title": "欢迎回来",
+    "subTitle": "填写以下信息进行登录"
+  },
+  "register": {
+    "title": "欢迎注册",
+    "subTitle": "请填写以下信息进行注册"
+  }
 }

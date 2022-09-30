@@ -1,15 +1,12 @@
 :root {
     --c-screen: #f9f9f9ff;
     --c-container: #ffffffff;
-    --c-header: rgba(250, 250, 250, 0.5);
-
+    --c-header: #f9f9f988;
+    --c-border: rgba(0, 0, 0, .12);
     --c-strong: rgba(0, 0, 0, 0.87);
     --c-normal: #4c4e4dff;
     --c-secondary: rgba(0, 0, 0, 0.6);
-
     --c-scrollbar: #c8c8c8ff;
-    --c-bg-selected: rgba(0, 0, 0, 0.1);
-
     --c-primary: #1a73e8ff;
     --c-success: #81c995ff;
     --c-warning: #fdd663ff;
@@ -19,25 +16,29 @@
 html.dark {
     --c-screen: #171d20ff;
     --c-container: #2f3133ff;
-    --c-header: rgba(50, 50, 50, 0.5);
-
+    --c-header: #171d2099;
+    --c-border: hsla(0, 0%, 100%, .12);
     --c-strong: #ffffffff;
     --c-normal: #ddddddff;
     --c-secondary: rgba(255, 255, 255, 0.7);
-
     --c-scrollbar: #3e3f4baa;
-    --c-bg-selected: rgba(255, 255, 255, 0.1);
-
     --c-primary: #1a73e899;
     --c-success: #81c99599;
     --c-warning: #fdd66399;
     --c-danger: #ee675c99;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 html, body {
     font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Lato, Roboto, PingFang SC, Microsoft YaHei, sans-serif !important;
 }
 
+.comment article {
+    font-size: 14px !important;
+}
 
 ::-webkit-scrollbar {
     width: 7px;
@@ -49,12 +50,29 @@ html, body {
     height: 7px;
 }
 
-::-webkit-scrollbar-track,
-::-webkit-scrollbar-corner {
-    border-radius: 10px;
-}
-
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     background: var(--c-scrollbar);
+}
+
+::selection {
+    background-color: #42A5F5;
+    color: #fff;
+}
+
+::-moz-selection {
+    background-color: #42A5F5;
+    color: #fff;
+}
+
+.v-field--error:not(.v-field--disabled) .v-label.v-field-label {
+    color: var(--c-danger) !important;
+}
+
+.v-input--error:not(.v-input--disabled) .v-input__details .v-messages {
+    color: var(--c-danger) !important;
+}
+
+.v-field--error:not(.v-field--disabled) .v-field__outline {
+    color: var(--c-danger) !important;
 }

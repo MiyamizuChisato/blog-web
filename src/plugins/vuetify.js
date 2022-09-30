@@ -1,8 +1,10 @@
-import 'vuetify/styles'
 import 'uno.css'
+import 'vuetify/styles'
+import 'aos/dist/aos.css'
+import '../assets/styles/markdown.css'
+import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
-import { createVuetify } from 'vuetify'
 
 const vuetify = createVuetify({
     components,
