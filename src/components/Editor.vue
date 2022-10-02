@@ -1,40 +1,30 @@
-<template>
-    <div class='markdown-editor markdown-viewer' overflow='hidden' bg-container>
-        <md-editor v-model='text' :toolbars='toolbars' :historyLength='0'
-                   h='!180px' border='!none' placeholder='请在这里编辑你的内容'>
-            <template #defToolbars>
-                <normal-toolbar :title='previewDisplay.iconTitle' @on-click='previewToggle'>
-                    <template #trigger>
-                        <div h='24px' w='24px' flex-center>
-                            <i text='5' :class='previewDisplay.icon' text-secondary />
-                        </div>
-                    </template>
-                </normal-toolbar>
-            </template>
-        </md-editor>
-    </div>
-</template>
-
-<script lang='ts' setup>
+<script setup>
 import MdEditor from 'md-editor-v3'
 import 'md-editor-v3/lib/style.css'
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 
 const props = defineProps({
-    content: String
+    modelValue: {
+        type: String,
+        default: ''
+    },
+    placeholder: {
+        type: String,
+        default: ''
+    }
 })
+const emits = defineEmits(['update:modelValue'])
 const NormalToolbar = MdEditor.NormalToolbar
 const preview = ref(false)
 const previewToggle = () => {
     preview.value = !preview.value
 }
-const text = ref(props.content)
 const previewDisplay = computed(() => {
     if (preview.value) {
         return {
             editor: 'none',
             preview: 'block',
-            icon: 'i-mdi-file-document-edit',
+            icon: 'i-mdi-file-edit',
             mode: '预览',
             iconTitle: '编辑'
         }
@@ -48,19 +38,35 @@ const previewDisplay = computed(() => {
     }
 })
 const toolbars = ['bold', 'underline', 'italic', 'strikeThrough', 'sup', 'sub', 0]
-
+const text = computed({
+    get: () => props.modelValue,
+    set: (value) => emits('update:modelValue', value)
+})
 </script>
-
+<template>
+    <div class='markdown-editor markdown-viewer' overflow='hidden' bg-container>
+        <md-editor v-model='text' :toolbars='toolbars' :historyLength='0'
+                   h='!180px' border='!none' :placeholder='placeholder'>
+            <template #defToolbars>
+                <normal-toolbar :title='previewDisplay.iconTitle' @on-click='previewToggle'>
+                    <template #trigger>
+                        <div h='24px' w='24px' flex-center>
+                            <i text='5' :class='previewDisplay.icon' text-secondary />
+                        </div>
+                    </template>
+                </normal-toolbar>
+            </template>
+        </md-editor>
+    </div>
+</template>
 <style>
 :root {
     --c-bg-bar: #fff;
-    --c-line-bar: rgb(245, 245, 245);
     --c-select-bar: rgba(235, 235, 235, 1)
 }
 
 html.dark {
     --c-bg-bar: #3e4550;
-    --c-line-bar: rgba(0, 0, 0, 0);
     --c-select-bar: rgba(255, 255, 255, 0.1)
 }
 
@@ -85,12 +91,13 @@ html.dark {
     font-size: 14px;
     line-height: 1.5;
     overflow-y: auto;
+    border-top: none;
 }
 
 .markdown-editor .md-toolbar-wrapper {
     height: 42px;
     background-color: var(--c-bg-bar);
-    border-bottom-color: var(--c-line-bar);
+    border-bottom-color: var(--c-border);
 }
 
 .markdown-editor .md-toolbar {

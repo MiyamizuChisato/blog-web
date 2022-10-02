@@ -1,33 +1,37 @@
 <script setup>
+import { inject, ref } from 'vue'
+import Avatar from '../../../components/Avatar.vue'
 
+const oss = inject('oss')
+const master = inject('master')
+const navigate = (href) => {
+    window.open(href)
+}
+const dialog = ref(false)
 </script>
 <template>
-    <div border='rounded-md' bg-container p='!y-6 !x-2'>
+    <div v-if='master' border='rounded-md' p='y-6 x-2' bg-container>
         <v-card-title data-aos='fade-up'>
             <div display='flex' items='center' flex='lt-md:col'>
-                <div>
-                    <img w='20' h='20' border='rounded-full' overflow='hidden' style='object-fit: cover'
-                         src='/src/assets/images/banner.png' alt=''>
-                </div>
+                <avatar :image='oss+master.avatar' width='88px' height='88px' />
                 <div m='x-4'>
                     <div text='center'>
-                        <span text='6' text-strong>Tisato</span>
+                        <span text='6' text-strong>{{ master.nickname }}</span>
                         <span m='x-2' text='5' font='400' text-secondary>[ちさと]</span>
                     </div>
                     <div text='4' font='400' text-secondary>Developer / Blogger / Gamer</div>
                 </div>
                 <div m='lt-md:y-4' flex='1' flex-end>
-                    <v-btn m='r-2' variant='flat' size='small' icon bg-success text-light>
+                    <v-btn m='r-2' @click='navigate("https://github.com/MiyamizuChisato")' variant='flat' size='small'
+                           icon bg-success text-light>
                         <i text='5' i-mdi-github />
                     </v-btn>
-                    <v-btn m='r-2' variant='flat' size='small' icon bg-danger text-light>
+                    <v-btn m='r-2' @click='navigate("https://steamcommunity.com/id/Inxposed/")' variant='flat'
+                           size='small' icon bg-danger text-light>
                         <i text='5' i-mdi-steam />
                     </v-btn>
-                    <v-btn m='r-2' variant='text' size='small' icon bg-primary text-light>
+                    <v-btn m='r-2' @click='dialog = true' variant='text' size='small' icon bg-primary text-light>
                         <i text='5' i-mdi-sony-playstation />
-                    </v-btn>
-                    <v-btn m='r-2' variant='text' size='small' icon bg-warning text-light>
-                        <i text='5' i-mdi-qqchat />
                     </v-btn>
                 </div>
             </div>
@@ -43,13 +47,13 @@
                     <div font='500' text-strong>我是</div>
                     <div m='l-4' flex='1'>
                         <p m='b-2'>
-                            来自四川的大学四年级学生Tisato，对程序设计和游戏还有动画很感兴趣
+                            来自四川的大学四年级学生Tisato，对程序设计和游戏还有动画很感兴趣;
                         </p>
                         <p m='b-2'>
-                            一位网站的博主，在维护和更新自己的独立网站，时不时写出一些废话，还会用霓虹语
+                            一位网站的博主，在维护和更新自己的独立网站，会一点霓虹语，时不时写出一些废话;
                         </p>
                         <p m='b-2'>
-                            一个求职者
+                            一个求职者。
                         </p>
                     </div>
                 </div>
@@ -114,6 +118,12 @@
             </v-card-item>
         </v-card-text>
     </div>
+    <v-dialog v-model='dialog'>
+        <div w='300px' m='x-auto' p='6' text-normal bg-container>
+            PSN ID : <span text='5' text-primary> MiyamizuCh1sato</span><br>
+            好友扩列，一起打游戏！
+        </div>
+    </v-dialog>
 </template>
 
 

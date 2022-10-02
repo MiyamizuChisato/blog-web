@@ -28,14 +28,18 @@
     "axios": "^0.27.2",
     "github-markdown-css": "^5.1.0",
     "highlight.js": "^11.6.0",
+    "jwt-decode": "^3.1.2",
+    "lodash": "^4.17.21",
     "markdown-it": "^13.0.1",
     "md-editor-v3": "^2.2.1",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.22",
     "unocss": "^0.45.23",
     "vue": "^3.2.39",
+    "vue-cropper": "^1.0.5",
     "vue-i18n": "9.3.0-beta.3",
     "vue-router": "^4.1.5",
+    "vue-toastification": "2.0.0-rc.5",
     "vuetify": "3.0.0-beta.11"
   },
   "devDependencies": {

@@ -1,24 +1,31 @@
 <script setup>
+import { inject } from 'vue'
+import { timeFormat } from '../../../utils/time.js'
+
+defineProps({
+    post: Object
+})
+const oss = inject('oss')
 </script>
 <template>
     <div class='post-card' flex='md:row col' select='none' bg-container>
-        <div class='image-box' style='background-image:url("./src/assets/images/banner.png")'>
+        <div class='image-box' :style='`background-image:url(${oss+post.image})`'>
         </div>
         <div class='content-box' p='md:10 lt-md:3' bg-container>
             <div data-aos='fade-up' cursor='pointer' text='5' line='md:clamp-2 clamp-1' text-strong>
-                当我们在讨论原神时，我们在讨论什么
+                {{ post.title }}
             </div>
             <div data-aos='fade-up' position='lt-md:absolute' w='full' bottom='lt-md:16' left='0'
                  p='x-4' display='flex' justify='between' text='!lt-md:light-200 3' text-secondary>
-                <div>十月 01, 2022</div>
+                <div>{{ timeFormat(post.createTime) }}</div>
                 <div flex-center>
                     <div m='x-1' flex-center>
                         <i m='x-1' i-heroicons-solid-lightning-bolt />
-                        <span m='x-1'>123</span>
+                        <span m='x-1'>{{ post.watch }}</span>
                     </div>
                     <div m='x-1' flex-center>
                         <i m='x-1' i-mdi-comment-minus />
-                        <span m='x-1'>123</span>
+                        <span m='x-1'>{{ post.comments.length }}</span>
                     </div>
                 </div>
             </div>

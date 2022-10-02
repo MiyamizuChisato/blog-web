@@ -1,4 +1,30 @@
 {
+  "form": {
+    "email": {
+      "label": "邮箱",
+      "place": "输入你的电子邮箱"
+    },
+    "password": {
+      "label": "密码",
+      "place": "输入包含字母和数字的8-16位密码"
+    },
+    "surePassword": {
+      "label": "确认密码",
+      "place": "再次输入密码"
+    },
+    "code": {
+      "label": "验证码",
+      "place": "输入邮箱中的6位验证码"
+    },
+    "nickname": {
+      "label": "昵称",
+      "place": "输入你的显示昵称"
+    },
+    "rule": {
+      "required": "必填",
+      "pattern": "格式不正确"
+    }
+  },
   "menu": {
     "index": "主页",
     "posts": "文章",
@@ -8,36 +34,53 @@
   "button": {
     "login": "登录",
     "register": "注册",
-    "send": "发送"
+    "send": "发送",
+    "save": "保存",
+    "cancel": "取消",
+    "modify": "修改",
+    "exit": "退出"
   },
-  "form": {
-    "email": {
-      "label": "邮箱",
-      "place": "输入你的电子邮箱"
-    },
-    "password": {
-      "label": "密码",
-      "place": "输入8-16位的密码"
-    },
-    "surePassword": {
-      "label": "确认密码",
-      "place": "再次输入密码"
-    },
-    "code": {
-      "label": "验证码",
-      "place": "输入邮箱中的验证码"
-    },
-    "nickname": {
-      "label": "昵称",
-      "place": "输入你的显示昵称"
+  "toast": {
+    "success": "操作成功",
+    "error": "发生了错误"
+  },
+  "account": {
+    "mine": "我的账号",
+    "logout": "退出登录"
+  },
+  "user": {
+    "typeError": "格式错误",
+    "motto": "这个人很懒，居然什么都没有写",
+    "identity": {
+      "1": "博主、梦想家",
+      "2": "注册会员"
     }
   },
   "login": {
     "title": "欢迎回来",
-    "subTitle": "填写以下信息进行登录"
+    "subTitle": "填写以下信息进行登录",
+    "success": "登陆成功，欢迎回来"
   },
   "register": {
     "title": "欢迎注册",
-    "subTitle": "请填写以下信息进行注册"
+    "subTitle": "请填写以下信息进行注册",
+    "success": "注册成功，已为你自动登录",
+    "send": "验证码发送成功，检查你的邮箱"
+  },
+  "time": {
+    "month": {
+      "01": "一月",
+      "02": "二月",
+      "03": "三月",
+      "04": "四月",
+      "05": "五月",
+      "06": "六月",
+      "07": "七月",
+      "08": "八月",
+      "09": "九月",
+      "10": "十月",
+      "11": "十一月",
+      "12": "十二月"
+    }
   }
 }

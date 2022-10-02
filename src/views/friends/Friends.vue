@@ -1,22 +1,19 @@
 <script setup>
 import onLoadFinished from '../../hooks/onLoadFinished.js'
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
+import { useToast } from 'vue-toastification'
 
-const snackbar = ref(true)
+const toast = useToast()
 onLoadFinished(() => {
+})
+onMounted(() => {
+    toast.info('这个页面正在准备中')
 })
 </script>
 <template>
-    <v-snackbar :timeout='-1' v-model='snackbar' :vertical='true'>
-        <div>
-            这个页面还在准备中，你的友链将在准备完成后添加到该页面
-        </div>
-        <template #actions>
-            <v-btn variant='text' @click='snackbar = false'>
-                <span text-primary>关闭</span>
-            </v-btn>
-        </template>
-    </v-snackbar>
+    <div>
+
+    </div>
 </template>
 
 

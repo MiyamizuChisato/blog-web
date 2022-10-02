@@ -29,5 +29,8 @@ img {
     width: v-bind(width);
     min-width: v-bind(width);
     min-height: v-bind(height);
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: crisp-edges;
 }
 </style>

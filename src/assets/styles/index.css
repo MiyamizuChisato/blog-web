@@ -14,18 +14,18 @@
 }
 
 html.dark {
-    --c-screen: #171d20ff;
+    --c-screen: #121212;
     --c-container: #2f3133ff;
-    --c-header: #171d2099;
+    --c-header: #121212ff;
     --c-border: hsla(0, 0%, 100%, .12);
     --c-strong: #ffffffff;
     --c-normal: #ddddddff;
     --c-secondary: rgba(255, 255, 255, 0.7);
     --c-scrollbar: #3e3f4baa;
-    --c-primary: #1a73e899;
-    --c-success: #81c99599;
-    --c-warning: #fdd66399;
-    --c-danger: #ee675c99;
+    --c-primary: #214e8dff;
+    --c-success: #4c7b5aff;
+    --c-warning: #a28023ff;
+    --c-danger: #864138ff;
 }
 
 * {
@@ -38,6 +38,30 @@ html, body {
 
 .comment article {
     font-size: 14px !important;
+}
+
+.markdown-editor #md-editor-v3-preview {
+    font-size: 14px !important;
+}
+
+.Vue-Toastification__toast--success {
+    background-color: var(--c-success) !important;
+}
+
+.Vue-Toastification__toast--info {
+    background-color: var(--c-primary) !important;
+}
+
+.Vue-Toastification__toast--error {
+    background-color: var(--c-danger) !important;
+}
+
+.Vue-Toastification__toast--warning {
+    background-color: var(--c-warning) !important;
+}
+
+.Vue-Toastification__progress-bar {
+    background-color: var(--c-scrollbar) !important;
 }
 
 ::-webkit-scrollbar {
@@ -63,6 +87,10 @@ html, body {
 ::-moz-selection {
     background-color: #42A5F5;
     color: #fff;
+}
+
+.v-tab__slider {
+    background-color: var(--c-primary) !important;
 }
 
 .v-field--error:not(.v-field--disabled) .v-label.v-field-label {

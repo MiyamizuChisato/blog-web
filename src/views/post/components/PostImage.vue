@@ -7,7 +7,7 @@ const props = defineProps({
 const url = computed(() => `url(${props.image})`)
 </script>
 <template>
-    <div data-aos='zoom-in' m='lg:t-6' border='lg:rounded-t-md' class='post-image'>
+    <div data-aos='zoom-in' border='lg:rounded-t-md' class='post-image'>
         <div class='mask'></div>
     </div>
 </template>

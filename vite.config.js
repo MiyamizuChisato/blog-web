@@ -25,19 +25,19 @@ export default defineConfig({
                 colors: {
                     primary: {
                         light: '#1a73e8ff',
-                        dark: '#1a73e8aa'
+                        dark: '#214e8dff'
                     },
                     success: {
                         light: '#81c995ff',
-                        dark: '#81c995aa'
+                        dark: '#4c7b5aff'
                     },
                     warning: {
                         light: '#fdd663ff',
-                        dark: '#fdd663aa'
+                        dark: '#a28023ff'
                     },
                     danger: {
                         light: '#ee675cff',
-                        dark: '#ee675caa'
+                        dark: '#864138ff'
                     },
                     strong: {
                         light: 'rgba(0,0,0,0.87)',
@@ -53,11 +53,15 @@ export default defineConfig({
                     },
                     screen: {
                         light: '#f9f9f9ff',
-                        dark: '#171d20ff'
+                        dark: '#121212'
                     },
                     container: {
                         light: '#ffffffff',
                         dark: '#2f3133ff'
+                    },
+                    border: {
+                        light: 'rgba(0, 0, 0, .12)',
+                        dark: 'hsla(0, 0%, 100%, .12)'
                     }
                 }
             },
